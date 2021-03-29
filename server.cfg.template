@@ -27,6 +27,8 @@ tftrue_tv_demos_path demos
 tftrue_logs_roundend 0
 tftrue_logs_accuracy 1
 
+sv_pausable 0
+
 tftrue_logs_apikey "${LOGS_TF_APIKEY}"
 tftrue_logs_prefix "${LOGS_TF_PREFIX}"
 
@@ -37,4 +39,4 @@ mp_tournament_readymode_countdown 5
 mp_tournament_readymode_min 2
 mp_tournament_readymode_team_size ${TEAM_SIZE}
 
-sv_pausable 0
+sm_concede_command_timeleft 15
