@@ -40,3 +40,6 @@ mp_tournament_readymode_min 2
 mp_tournament_readymode_team_size ${TEAM_SIZE}
 
 sm_concede_command_timeleft 15
+
+sm_tf2pickuporg_api_address ${TF2PICKUPORG_API_ADDRESS}
+sm_tf2pickuporg_api_key ${TF2PICKUPORG_API_KEY}
