@@ -15,6 +15,6 @@ RUN wget "https://forums.alliedmods.net/attachment.php?attachmentid=188744&d=161
 
 ENV TEAM_SIZE=6
 ENV TF2PICKUPORG_API_ADDRESS=
-ENV TF2PICKUPORG_API_KEY=
+ENV TF2PICKUPORG_SECRET=
 
 COPY server.cfg.template ${SERVER_DIR}/tf/cfg/server.cfg.template
