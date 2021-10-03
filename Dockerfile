@@ -10,7 +10,7 @@ RUN wget "https://forums.alliedmods.net/attachment.php?attachmentid=188744&d=161
   && wget "https://github.com/KyleSanderson/SteamWorks/releases/download/1.2.3c/package-lin.tgz" -O steamworks.tgz \
   && tar -xf steamworks.tgz --strip-components=1 -C "${SERVER_DIR}/tf/" \
   && rm -f steamworks.tgz \
-  && wget "https://github.com/tf2pickup-org/connector/releases/download/0.0.1/connector.smx" -O $SERVER_DIR/tf/addons/sourcemod/plugins/connector.smx \
+  && wget "https://github.com/tf2pickup-org/connector/releases/download/0.0.2/connector.smx" -O $SERVER_DIR/tf/addons/sourcemod/plugins/connector.smx \
   && wget "https://github.com/tf2pickup-org/stadium-sm-plugin/raw/master/teams.smx" -O $SERVER_DIR/tf/addons/sourcemod/plugins/teams.smx
 
 ENV TEAM_SIZE=6
