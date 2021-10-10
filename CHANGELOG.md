@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/tf2pickup-pl/tf2-gameserver/compare/1.2.4...1.3.0) (2021-10-10)
+
+
+### Bug Fixes
+
+* **deps:** update tf2-competitive to v1.2.2 ([fc5a9d7](https://github.com/tf2pickup-pl/tf2-gameserver/commit/fc5a9d7854958dfaed829399f91f2baf14102b0d))
+
+
+### Features
+
+* support voice channel name ([ec8cb79](https://github.com/tf2pickup-pl/tf2-gameserver/commit/ec8cb7985d4e653bd3981fe279722cc86867043a))
+
 ## [1.2.4](https://github.com/tf2pickup-pl/tf2-gameserver/compare/1.2.3...1.2.4) (2021-10-07)
 
 
