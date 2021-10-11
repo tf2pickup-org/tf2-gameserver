@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/tf2pickup-pl/tf2-gameserver/compare/1.3.0...1.3.1) (2021-10-11)
+
+
+### Bug Fixes
+
+* **server.cfg:** put variables in quotes ([3257283](https://github.com/tf2pickup-pl/tf2-gameserver/commit/32572838a997224ee6e78341ce0e730f7d6bc90e))
+
 # [1.3.0](https://github.com/tf2pickup-pl/tf2-gameserver/compare/1.2.4...1.3.0) (2021-10-10)
 
 
