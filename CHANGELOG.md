@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/tf2pickup-pl/tf2-gameserver/compare/1.3.4...1.3.5) (2021-11-04)
+
+
+### Bug Fixes
+
+* add TF2PICKUPORG_PRIORITY env variable ([8c69461](https://github.com/tf2pickup-pl/tf2-gameserver/commit/8c694617e586bb4358d14bb0f8f6e0bc846f9b1d))
+
 ## [1.3.4](https://github.com/tf2pickup-pl/tf2-gameserver/compare/1.3.3...1.3.4) (2021-11-04)
 
 
