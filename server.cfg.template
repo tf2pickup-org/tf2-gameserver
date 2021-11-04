@@ -42,3 +42,4 @@ mp_tournament_readymode_team_size ${TEAM_SIZE}
 sm_tf2pickuporg_api_address "${TF2PICKUPORG_API_ADDRESS}"
 sm_tf2pickuporg_secret "${TF2PICKUPORG_SECRET}"
 sm_tf2pickuporg_voice_channel_name "${TF2PICKUPORG_VOICE_CHANNEL_NAME}"
+sm_tf2pickuporg_priority "${TF2PICKUPORG_PRIORITY}"
