@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/tf2pickup-pl/tf2-gameserver/compare/1.3.5...1.4.0) (2021-11-06)
+
+
+### Features
+
+* add TF2PICKUPORG_OVERRIDE_INTERNAL_ADDRESS env variable ([ecee658](https://github.com/tf2pickup-pl/tf2-gameserver/commit/ecee658e58dc56deacc321597abca56464314a04))
+
 ## [1.3.5](https://github.com/tf2pickup-pl/tf2-gameserver/compare/1.3.4...1.3.5) (2021-11-04)
 
 
