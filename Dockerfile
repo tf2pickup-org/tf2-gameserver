@@ -1,4 +1,4 @@
-FROM melkortf/tf2-competitive:1.3.2
+FROM melkortf/tf2-competitive:1.3.3
 LABEL maintainer="garrappachc@gmail.com"
 
 # DM is conflicting with the ready up mode
