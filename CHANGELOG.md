@@ -1,3 +1,11 @@
+## [1.4.11](https://github.com/tf2pickup-pl/tf2-gameserver/compare/1.4.10...1.4.11) (2022-04-28)
+
+
+### Bug Fixes
+
+* **build:** verify downloaded plugins' checksums ([#4](https://github.com/tf2pickup-pl/tf2-gameserver/issues/4)) ([456eb25](https://github.com/tf2pickup-pl/tf2-gameserver/commit/456eb259365aa4f4af6e5903dd7fd33addf74e16))
+* **deps:** update metadata-ction to v3 ([#5](https://github.com/tf2pickup-pl/tf2-gameserver/issues/5)) ([70151f4](https://github.com/tf2pickup-pl/tf2-gameserver/commit/70151f4de99c5f4c84b0a9bfeafcdba6ad9ee035))
+
 ## [1.4.10](https://github.com/tf2pickup-pl/tf2-gameserver/compare/1.4.9...1.4.10) (2022-04-22)
 
 
