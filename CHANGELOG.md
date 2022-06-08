@@ -1,3 +1,10 @@
+## [1.4.13](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.4.12...1.4.13) (2022-06-08)
+
+
+### Bug Fixes
+
+* **deps:** update connector to v0.4.1 ([1f61ad4](https://github.com/tf2pickup-org/tf2-gameserver/commit/1f61ad4575bb315141a3b8a0b88e4d2ab5a90def))
+
 ## [1.4.12](https://github.com/tf2pickup-pl/tf2-gameserver/compare/1.4.11...1.4.12) (2022-05-18)
 
 
