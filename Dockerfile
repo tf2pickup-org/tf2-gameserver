@@ -12,7 +12,7 @@ ARG STEAMWORKS_URL=https://github.com/KyleSanderson/SteamWorks/releases/download
 ARG STEAMWORKS_FILE_NAME=steamworks.tgz
 
 ARG CONNECTOR_PLUGIN_FILE_NAME=connector.smx
-ARG CONNECTOR_PLUGIN_VERSION=0.4.0
+ARG CONNECTOR_PLUGIN_VERSION=0.4.1
 ARG CONNECTOR_PLUGIN_URL=https://github.com/tf2pickup-org/connector/releases/download/${CONNECTOR_PLUGIN_VERSION}/${CONNECTOR_PLUGIN_FILE_NAME}
 
 ARG TEAMS_PLUGIN_FILE_NAME=teams.smx
