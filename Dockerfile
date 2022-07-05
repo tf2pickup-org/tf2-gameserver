@@ -25,7 +25,7 @@ RUN \
   && mv "${CONNECTOR_PLUGIN_FILE_NAME}" "$SERVER_DIR/tf/addons/sourcemod/plugins/${CONNECTOR_PLUGIN_FILE_NAME}" \
   && mv "${TEAMS_PLUGIN_FILE_NAME}" "$SERVER_DIR/tf/addons/sourcemod/plugins/${TEAMS_PLUGIN_FILE_NAME}" \
   # cleanup
-  && rm "${SYSTEM2_FILE_NAME}" "${STEAMWORKS_FILE_NAME}" \
+  && rm "${SYSTEM2_FILE_NAME}" \
   && rm "checksum.md5" \
   # DM is conflicting with the ready up mode
   && rm "${SERVER_DIR}/tf/addons/sourcemod/plugins/soap_tf2dm.smx" \
