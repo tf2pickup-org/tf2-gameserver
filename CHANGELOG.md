@@ -1,3 +1,10 @@
+## [1.4.20](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.4.19...1.4.20) (2022-07-05)
+
+
+### Bug Fixes
+
+* **build:** fix cleanup script ([b35adbe](https://github.com/tf2pickup-org/tf2-gameserver/commit/b35adbe1a918e75cae8bf4a2bc1c83d7ceb90c99))
+
 ## [1.4.19](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.4.18...1.4.19) (2022-07-05)
 
 
