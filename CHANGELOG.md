@@ -1,3 +1,10 @@
+## [1.4.19](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.4.18...1.4.19) (2022-07-05)
+
+
+### Bug Fixes
+
+* update checksum ([17d8e05](https://github.com/tf2pickup-org/tf2-gameserver/commit/17d8e05215c8229c9cfd81359ea304cb4198e9bb))
+
 ## [1.4.18](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.4.17...1.4.18) (2022-07-05)
 
 
