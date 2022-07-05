@@ -1,3 +1,11 @@
+## [1.4.18](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.4.17...1.4.18) (2022-07-05)
+
+
+### Bug Fixes
+
+* **deps:** update connector plugin to version 0.5.0 ([a75692c](https://github.com/tf2pickup-org/tf2-gameserver/commit/a75692c9342f0d84517b23a56fbce6350ac5c683))
+* remove VOICE_CHANNEL_NAME param ([98b4b3f](https://github.com/tf2pickup-org/tf2-gameserver/commit/98b4b3fd077b1e73680c6af67b573a534c2894e6))
+
 
 
 ## [1.4.17](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.4.16...1.4.17) (2022-06-25)
