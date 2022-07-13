@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.4.20...1.5.0) (2022-07-13)
+
+
+### Features
+
+* update connector to version 0.6.0 ([9814bce](https://github.com/tf2pickup-org/tf2-gameserver/commit/9814bcefceaa27c0bbb643b1912979c59a2f587f))
+
 ## [1.4.20](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.4.19...1.4.20) (2022-07-05)
 
 
