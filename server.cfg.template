@@ -24,6 +24,8 @@ sv_pausable 0
 logstf_apikey "${LOGS_TF_APIKEY}"
 sm_demostf_apikey "${DEMOS_TF_APIKEY}"
 
+recordstv_path "demos"
+
 mp_tournament_readymode 1
 mp_tournament_readymode_countdown 5
 mp_tournament_readymode_min 2
