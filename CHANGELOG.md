@@ -1,3 +1,5 @@
+## [1.5.3](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.5.2...1.5.3) (2022-10-06)
+
 ## [1.5.2](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.5.1...1.5.2) (2022-10-06)
 
 
