@@ -1,3 +1,12 @@
+
+
+# [1.6.0](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.5.6...1.6.0) (2022-11-13)
+
+
+### Features
+
+* add stac plugin ([#6](https://github.com/tf2pickup-org/tf2-gameserver/issues/6)) ([78300e2](https://github.com/tf2pickup-org/tf2-gameserver/commit/78300e29b6fa3ee11f251bf788b460739b036572))
+
 ## [1.5.6](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.5.5...1.5.6) (2022-11-03)
 
 
