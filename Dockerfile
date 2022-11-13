@@ -20,7 +20,7 @@ ARG STAC_PLUGIN_URL=https://github.com/sapphonie/StAC-tf2/releases/download/${ST
 
 RUN \
   # download all the plugins
-  wget -nv "${CONNECTOR_PLUGIN_URL}" "${TEAMS_PLUGIN_URL}" \
+  wget -nv "${CONNECTOR_PLUGIN_URL}" "${TEAMS_PLUGIN_URL}" "${STAC_PLUGIN_URL}" \
   && wget -nv "${SYSTEM2_URL}" -O "${SYSTEM2_FILE_NAME}" \
   # verify checksums
   && md5sum -c checksum.md5 \
@@ -45,3 +45,4 @@ ENV TF2PICKUPORG_OVERRIDE_INTERNAL_ADDRESS=
 ENV TF2PICKUPORG_OVERRIDE_PUBLIC_ADDRESS=
 
 COPY server.cfg.template ${SERVER_DIR}/tf/cfg/server.cfg.template
+COPY stac.cfg  ${SERVER_DIR}/tf/cfg/sourcemod/stac.cfg
