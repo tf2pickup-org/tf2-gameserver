@@ -1,4 +1,4 @@
-FROM melkortf/tf2-competitive:2.1.3
+FROM melkortf/tf2-competitive:2.1.4
 LABEL maintainer="garrappachc@gmail.com"
 
 COPY checksum.md5 .
