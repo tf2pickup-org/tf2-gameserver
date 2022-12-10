@@ -1,3 +1,13 @@
+
+
+## [1.6.2](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.6.1...1.6.2) (2022-12-10)
+
+
+### Bug Fixes
+
+* **deps:** bump StAC to version 5.4.3 ([#7](https://github.com/tf2pickup-org/tf2-gameserver/issues/7)) ([83a2d84](https://github.com/tf2pickup-org/tf2-gameserver/commit/83a2d8435aef09869ed91bca811cb5101b722c18))
+* **deps:** update tf2-competitive to version 2.1.6 ([5305fab](https://github.com/tf2pickup-org/tf2-gameserver/commit/5305fabc0ee29335cce00617303c30ebd596aadd))
+
 ## [1.6.1](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.6.0...1.6.1) (2022-12-02)
 
 
