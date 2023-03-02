@@ -1,3 +1,10 @@
+## [1.6.6](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.6.5...1.6.6) (2023-03-02)
+
+
+### Bug Fixes
+
+* **deps:** update tf2-competitive to version 2.1.11 ([fd2ca00](https://github.com/tf2pickup-org/tf2-gameserver/commit/fd2ca00a59abb1070e40105f3d2714ec6d1fe201))
+
 ## [1.6.5](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.6.4...1.6.5) (2023-01-08)
 
 
