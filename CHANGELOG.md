@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.6.6...2.0.0) (2023-03-15)
+
+
+### Features
+
+* **build:** upload image to gh packages ([#8](https://github.com/tf2pickup-org/tf2-gameserver/issues/8)) ([3a22914](https://github.com/tf2pickup-org/tf2-gameserver/commit/3a22914c138fd222bacfca0be3dd16fc1f61021f))
+
+
+### BREAKING CHANGES
+
+* **build:** the image name is changed
+
 ## [1.6.6](https://github.com/tf2pickup-org/tf2-gameserver/compare/1.6.5...1.6.6) (2023-03-02)
 
 
