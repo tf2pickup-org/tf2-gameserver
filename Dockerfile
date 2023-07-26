@@ -1,4 +1,4 @@
-FROM ghcr.io/melkortf/tf2-competitive:3.1.1
+FROM ghcr.io/melkortf/tf2-competitive:3.1.2
 LABEL maintainer="garrappachc@gmail.com"
 
 COPY checksum.md5 .
