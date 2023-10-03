@@ -14,7 +14,7 @@ ARG CONNECTOR_PLUGIN_URL=https://github.com/tf2pickup-org/connector/releases/dow
 ARG TEAMS_PLUGIN_FILE_NAME=teams.smx
 ARG TEAMS_PLUGIN_URL=https://github.com/tf2pickup-org/stadium-sm-plugin/raw/master/${TEAMS_PLUGIN_FILE_NAME}
 
-ARG STAC_PLUGIN_VERSION=v5.4.3
+ARG STAC_PLUGIN_VERSION=v6.0.5
 ARG STAC_PLUGIN_FILE_NAME=stac.zip
 ARG STAC_PLUGIN_URL=https://github.com/sapphonie/StAC-tf2/releases/download/${STAC_PLUGIN_VERSION}/${STAC_PLUGIN_FILE_NAME}
 
