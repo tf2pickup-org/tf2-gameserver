@@ -1,3 +1,10 @@
+## [2.0.12](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.11...2.0.12) (2023-10-03)
+
+
+### Bug Fixes
+
+* **deps:** update StAC plugin to version 6.0.5 ([#9](https://github.com/tf2pickup-org/tf2-gameserver/issues/9)) ([7c8c096](https://github.com/tf2pickup-org/tf2-gameserver/commit/7c8c096d9369a895fe557d55a7a61e7f4046c596))
+
 ## [2.0.11](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.10...2.0.11) (2023-10-03)
 
 
