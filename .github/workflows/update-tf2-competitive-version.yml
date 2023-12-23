@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ACTIONS_BOT_TOKEN }}
 
       - name: Set git identity
         run: |
