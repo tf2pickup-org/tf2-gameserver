@@ -1,0 +1,38 @@
+name: Update tf2-competitive version
+
+on:
+  workflow_dispatch:
+    inputs:
+      tf2_competitive_version:
+        type: string
+        description: 'tf2-competitive image version'
+        required: true
+
+jobs:
+  update-tf2-competitive-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set git identity
+        run: |
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'github-actions[bot]'
+
+      - name: Create commit
+        run: |
+          git checkout -b update-tf2-competitive-${{ github.event.inputs.tf2_competitive_version }}
+          sed -i 's/TF2_COMPETITIVE_VERSION=.*/TF2_COMPETITIVE_VERSION=${{ github.event.inputs.tf2_competitive_version }}/' Dockerfile
+          git commit -am 'fix(deps): update tf2-competitive version to ${{ github.event.inputs.tf2_competitive_version }}'
+          git push origin update-tf2-competitive-${{ github.event.inputs.tf2_competitive_version }}
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "fix(deps): update tf2-competitive version to ${{ github.event.inputs.tf2_competitive_version }}"
+          title: "fix(deps): update tf2-competitive version to ${{ github.event.inputs.tf2_competitive_version }}"
+          body: Update tf2-competitive version to ${{ github.event.inputs.tf2_competitive_version }}
+          branch: bump-tf2-competitive-${{ github.event.inputs.tf2_competitive_version }}
+          delete-branch: true
