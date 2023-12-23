@@ -1,4 +1,6 @@
-FROM ghcr.io/melkortf/tf2-competitive:3.1.26
+ARG REGISTRY=ghcr.io
+ARG TF2_COMPETITIVE_VERSION=3.1.26
+FROM ${REGISTRY}/melkortf/tf2-competitive:${TF2_COMPETITIVE_VERSION}
 LABEL maintainer="garrappachc@gmail.com"
 
 COPY checksum.md5 .
