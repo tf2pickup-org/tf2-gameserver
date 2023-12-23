@@ -11,6 +11,11 @@ on:
 jobs:
   update-tf2-competitive-version:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,12 +25,9 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git config --global user.name 'github-actions[bot]'
 
-      - name: Create commit
+      - name: Update tf2-competitive version
         run: |
-          git checkout -b update-tf2-competitive-${{ github.event.inputs.tf2_competitive_version }}
           sed -i 's/TF2_COMPETITIVE_VERSION=.*/TF2_COMPETITIVE_VERSION=${{ github.event.inputs.tf2_competitive_version }}/' Dockerfile
-          git commit -am 'fix(deps): update tf2-competitive version to ${{ github.event.inputs.tf2_competitive_version }}'
-          git push origin update-tf2-competitive-${{ github.event.inputs.tf2_competitive_version }}
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v5
@@ -36,3 +38,4 @@ jobs:
           body: Update tf2-competitive version to ${{ github.event.inputs.tf2_competitive_version }}
           branch: update-tf2-competitive-${{ github.event.inputs.tf2_competitive_version }}
           delete-branch: true
+          reviewers: garrappachc
