@@ -34,5 +34,5 @@ jobs:
           commit-message: "fix(deps): update tf2-competitive version to ${{ github.event.inputs.tf2_competitive_version }}"
           title: "fix(deps): update tf2-competitive version to ${{ github.event.inputs.tf2_competitive_version }}"
           body: Update tf2-competitive version to ${{ github.event.inputs.tf2_competitive_version }}
-          branch: bump-tf2-competitive-${{ github.event.inputs.tf2_competitive_version }}
+          branch: update-tf2-competitive-${{ github.event.inputs.tf2_competitive_version }}
           delete-branch: true
