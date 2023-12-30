@@ -1,5 +1,5 @@
 ARG REGISTRY=ghcr.io
-ARG TF2_COMPETITIVE_VERSION=3.1.28
+ARG TF2_COMPETITIVE_VERSION=3.1.29
 FROM ${REGISTRY}/melkortf/tf2-competitive:${TF2_COMPETITIVE_VERSION}
 LABEL maintainer="garrappachc@gmail.com"
 
