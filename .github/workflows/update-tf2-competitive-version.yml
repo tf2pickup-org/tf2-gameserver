@@ -32,7 +32,7 @@ jobs:
           sed -i 's/TF2_COMPETITIVE_VERSION=.*/TF2_COMPETITIVE_VERSION=${{ github.event.inputs.tf2_competitive_version }}/' Dockerfile
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "fix(deps): update tf2-competitive version to ${{ github.event.inputs.tf2_competitive_version }}"
