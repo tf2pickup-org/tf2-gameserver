@@ -5,8 +5,6 @@ LABEL maintainer="garrappachc@gmail.com"
 
 COPY checksum.md5 .
 
-# System2 is dependency of the connector plugin
-ARG SYSTEM2_URL=https://forums.alliedmods.net/attachment.php?attachmentid=188744&d=1618607414
 ARG SYSTEM2_FILE_NAME=system2.zip
 
 ARG CONNECTOR_PLUGIN_FILE_NAME=connector.smx
@@ -20,10 +18,11 @@ ARG STAC_PLUGIN_VERSION=v6.0.5
 ARG STAC_PLUGIN_FILE_NAME=stac.zip
 ARG STAC_PLUGIN_URL=https://github.com/sapphonie/StAC-tf2/releases/download/${STAC_PLUGIN_VERSION}/${STAC_PLUGIN_FILE_NAME}
 
+COPY system2.zip .
+
 RUN \
   # download all the plugins
   wget -nv "${CONNECTOR_PLUGIN_URL}" "${TEAMS_PLUGIN_URL}" "${STAC_PLUGIN_URL}" \
-  && wget -nv "${SYSTEM2_URL}" -O "${SYSTEM2_FILE_NAME}" \
   # verify checksums
   && md5sum -c checksum.md5 \
   # install plugins
