@@ -5,6 +5,8 @@ LABEL maintainer="garrappachc@gmail.com"
 
 COPY checksum.md5 .
 
+ARG SYSTEM2_FILE_NAME=system2.zip
+
 ARG CONNECTOR_PLUGIN_FILE_NAME=connector.smx
 ARG CONNECTOR_PLUGIN_VERSION=0.6.0
 ARG CONNECTOR_PLUGIN_URL=https://github.com/tf2pickup-org/connector/releases/download/${CONNECTOR_PLUGIN_VERSION}/${CONNECTOR_PLUGIN_FILE_NAME}
