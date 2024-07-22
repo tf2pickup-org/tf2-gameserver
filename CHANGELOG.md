@@ -1,5 +1,14 @@
 
 
+## [2.0.33](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.32...2.0.33) (2024-07-22)
+
+
+### Bug Fixes
+
+* **deps:** update tf2-competitive version to 3.2.11 ([#32](https://github.com/tf2pickup-org/tf2-gameserver/issues/32)) ([f349c63](https://github.com/tf2pickup-org/tf2-gameserver/commit/f349c63a08b77e400649ed76410f8c7f5c0dca34))
+* **deps:** update tf2-competitive version to 3.2.7 ([#30](https://github.com/tf2pickup-org/tf2-gameserver/issues/30)) ([14a771d](https://github.com/tf2pickup-org/tf2-gameserver/commit/14a771d8f9c8ff982e111ad2efa227a1f85fe8ca))
+* don't download system2 ([#31](https://github.com/tf2pickup-org/tf2-gameserver/issues/31)) ([6cc00a1](https://github.com/tf2pickup-org/tf2-gameserver/commit/6cc00a1f77bcca632dc242315892b5a047313f45))
+
 ## [2.0.32](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.31...2.0.32) (2024-06-06)
 
 
