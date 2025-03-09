@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.0.41](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.40...2.0.41) (2025-03-09)
+
 ## [2.0.40](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.39...2.0.40) (2025-03-09)
 
 
