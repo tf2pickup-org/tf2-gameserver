@@ -1,0 +1,117 @@
+name: Bump tf2-competitive version
+
+on:
+  schedule:
+    # Runs at 4:00 AM and 4:00 PM UTC every day
+    - cron: "0 4,16 * * *"
+  workflow_dispatch:
+
+jobs:
+  bump-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+      packages: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get current TF2_COMPETITIVE_VERSION from Dockerfile
+        id: get_current_version
+        run: |
+          current_version_line=$(grep 'ARG TF2_COMPETITIVE_VERSION=' Dockerfile)
+          if [ -z "$current_version_line" ]; then
+            echo "Error: Line 'ARG TF2_COMPETITIVE_VERSION=' not found in Dockerfile."
+            exit 1
+          fi
+          version=$(echo "$current_version_line" | cut -d'=' -f2)
+          if [ -z "$version" ]; then
+            echo "Error: Could not extract current version value from Dockerfile (ARG TF2_COMPETITIVE_VERSION=...)."
+            exit 1
+          fi
+          echo "Current TF2_COMPETITIVE_VERSION in Dockerfile: $version"
+          echo "TF2_COMPETITIVE_VERSION=$version" >> $GITHUB_OUTPUT
+
+      - name: Get latest melkortf/tf2-competitive image version from GHCR
+        id: get_latest_ghcr_version
+        run: |
+          echo "Fetching versions for ghcr.io/melkortf/tf2-competitive..."
+          # GITHUB_TOKEN has read:packages permission for public packages or internal packages within the same org.
+          api_url="https://api.github.com/orgs/melkortf/packages/container/tf2-competitive/versions"
+
+          # The `jq` tool is pre-installed on GitHub-hosted runners.
+          # The API returns versions, usually newest first, but we sort to be sure.
+          # We filter for tags that look like X.Y.Z semantic versions.
+          version_data=$(curl -s -L \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "$api_url")
+
+          if [ -z "$version_data" ] || [ "$(echo "$version_data" | jq '. | length')" == "0" ] ; then
+            echo "Error: No version data received from GHCR API for melkortf/tf2-competitive."
+            echo "API URL: $api_url"
+            echo "API Response (first 500 chars): $(echo "$version_data" | head -c 500)"
+            exit 1
+          fi
+
+          latest_semver=$(echo "$version_data" | jq -r '.[].name' | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1)
+
+          if [ -z "$latest_semver" ]; then
+            echo "Error: Could not determine the latest semantic version (X.Y.Z) for melkortf/tf2-competitive from GHCR."
+            echo "Raw names from API: $(echo "$version_data" | jq -r '.[].name')"
+            exit 1
+          fi
+
+          echo "Latest melkortf/tf2-competitive version found on GHCR: $latest_semver"
+          echo "LATEST_TF2_COMPETITIVE_VERSION=$latest_semver" >> $GITHUB_OUTPUT
+
+      - name: Compare versions
+        id: compare_versions
+        run: |
+          current_version="${{ steps.get_current_version.outputs.TF2_COMPETITIVE_VERSION }}"
+          latest_version="${{ steps.get_latest_ghcr_version.outputs.LATEST_TF2_COMPETITIVE_VERSION }}"
+          echo "Current version from Dockerfile: $current_version"
+          echo "Latest available version from GHCR: $latest_version"
+          if [ "$current_version" == "$latest_version" ]; then
+            echo "TF2_COMPETITIVE_VERSION is up to date."
+            echo "NEEDS_UPDATE=false" >> $GITHUB_OUTPUT
+          else
+            echo "TF2_COMPETITIVE_VERSION needs update: $current_version -> $latest_version."
+            echo "NEEDS_UPDATE=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update Dockerfile, commit, push, and trigger release
+        if: steps.compare_versions.outputs.NEEDS_UPDATE == 'true'
+        env:
+          LATEST_VERSION: ${{ steps.get_latest_ghcr_version.outputs.LATEST_TF2_COMPETITIVE_VERSION }}
+        run: |
+          echo "Updating Dockerfile with new version: $LATEST_VERSION"
+          # Using a pipe as a delimiter for sed, in case version strings could hypothetically contain slashes.
+          sed -i "s|ARG TF2_COMPETITIVE_VERSION=.*|ARG TF2_COMPETITIVE_VERSION=$LATEST_VERSION|" Dockerfile
+
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+          # Determine the current branch. For scheduled/dispatch workflows, GITHUB_REF_NAME is typically the default branch.
+          current_branch="${{ github.ref_name }}"
+          echo "Current branch for commit and dispatch: $current_branch"
+
+          git add Dockerfile
+          git commit -m "fix(deps): update tf2-competitive version to $LATEST_VERSION"
+
+          echo "Pushing changes to branch '$current_branch'..."
+          git push origin "HEAD:$current_branch"
+
+          echo "Changes pushed. Triggering 'release.yml' workflow on branch '$current_branch'..."
+          curl -L \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/release.yml/dispatches" \
+            -d '{"ref":"'$current_branch'"}'
+
+          echo "'release.yml' workflow triggered successfully."
