@@ -38,17 +38,13 @@ jobs:
         id: get_latest_ghcr_version
         run: |
           echo "Fetching versions for ghcr.io/melkortf/tf2-competitive..."
-          # GITHUB_TOKEN has read:packages permission for public packages or internal packages within the same org.
           api_url="https://api.github.com/orgs/melkortf/packages/container/tf2-competitive/versions"
 
-          # The `jq` tool is pre-installed on GitHub-hosted runners.
-          # The API returns versions, usually newest first, but we sort to be sure.
-          # We filter for tags that look like X.Y.Z semantic versions.
           version_data=$(curl -s -L \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            "$api_url")
+            "$api_url?per_page=100") # Fetch more entries in case of many non-tag versions
 
           if [ -z "$version_data" ] || [ "$(echo "$version_data" | jq '. | length')" == "0" ] ; then
             echo "Error: No version data received from GHCR API for melkortf/tf2-competitive."
@@ -57,11 +53,26 @@ jobs:
             exit 1
           fi
 
-          latest_semver=$(echo "$version_data" | jq -r '.[].name' | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1)
+          # Extract all tags from .metadata.container.tags for each version entry.
+          # The '[]?' syntax handles cases where 'tags' might be null or missing without erroring.
+          all_tags=$(echo "$version_data" | jq -r '.[].metadata.container.tags[]?')
+
+          if [ -z "$all_tags" ]; then
+            echo "Error: No tags found in .metadata.container.tags of the fetched versions."
+            echo "Attempting to show 'name' fields from API for diagnostics:"
+            echo "$(echo "$version_data" | jq -r '.[].name')"
+            echo "Full API response (first 1000 chars for brevity): $(echo "$version_data" | head -c 1000)"
+            exit 1
+          fi
+
+          latest_semver=$(echo "$all_tags" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1)
 
           if [ -z "$latest_semver" ]; then
-            echo "Error: Could not determine the latest semantic version (X.Y.Z) for melkortf/tf2-competitive from GHCR."
-            echo "Raw names from API: $(echo "$version_data" | jq -r '.[].name')"
+            echo "Error: Could not determine the latest semantic version (X.Y.Z) from the extracted tags."
+            echo "All extracted tags from .metadata.container.tags:"
+            echo "$all_tags"
+            echo "Filtered semantic tags (before sort/tail):"
+            echo "$(echo "$all_tags" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' || echo 'No semantic tags found by grep')"
             exit 1
           fi
 
