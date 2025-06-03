@@ -1,6 +1,6 @@
 ARG REGISTRY=ghcr.io
-ARG TF2_COMPETITIVE_VERSION=3.5.15
-FROM ${REGISTRY}/melkortf/tf2-competitive:${TF2_COMPETITIVE_VERSION}
+ARG TF2_COMPETITIVE_TAG=latest
+FROM ${REGISTRY}/melkortf/tf2-competitive/i386:${TF2_COMPETITIVE_TAG}
 LABEL maintainer="garrappachc@gmail.com"
 
 COPY checksum.md5 .
