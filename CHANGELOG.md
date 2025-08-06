@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.61](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.60...2.0.61) (2025-08-06)
+
+
+### Bug Fixes
+
+* **deps:** update tf2-competitive version to 3.8.8 ([4f18def](https://github.com/tf2pickup-org/tf2-gameserver/commit/4f18def8c88596c694eee1d438998763b229ceb6))
+
 ## [2.0.60](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.59...2.0.60) (2025-08-06)
 
 
