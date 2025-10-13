@@ -36,7 +36,9 @@ RUN \
   && rm "checksum.md5" \
   # DM is conflicting with the ready up mode
   && rm "${SERVER_DIR}/tf/addons/sourcemod/plugins/soap_tf2dm.smx" \
-  "${SERVER_DIR}/tf/addons/sourcemod/plugins/soap_tournament.smx"
+  "${SERVER_DIR}/tf/addons/sourcemod/plugins/soap_tournament.smx" \
+  # rglqol is doing changelevel on tv_enable, we don't want that
+  && mv "${SERVER_DIR}/tf/addons/sourcemod/plugins/rglqol.smx" "${SERVER_DIR}/tf/addons/sourcemod/plugins/disabled/rglqol.smx" 
 
 ENV TEAM_SIZE=6
 ENV TF2PICKUPORG_API_ADDRESS=
