@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.67](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.66...2.0.67) (2025-10-13)
+
+
+### Bug Fixes
+
+* disable rglqol plugin ([#51](https://github.com/tf2pickup-org/tf2-gameserver/issues/51)) ([4a9ef79](https://github.com/tf2pickup-org/tf2-gameserver/commit/4a9ef7969521511bcc8519ce98603cc77442f7b0))
+* update StAC to version 6.3.7 ([#50](https://github.com/tf2pickup-org/tf2-gameserver/issues/50)) ([404d3d7](https://github.com/tf2pickup-org/tf2-gameserver/commit/404d3d7f4e37946f64cdf4dcefc373b4082cefb2))
+
 ## [2.0.66](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.65...2.0.66) (2025-10-11)
 
 
