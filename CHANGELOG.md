@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.77](/compare/2.0.76...2.0.77) (2025-12-16)
+
+
+### Bug Fixes
+
+* **deps:** update tf2-competitive version to 3.9.13 3fbb520
+
 ## [2.0.76](/compare/2.0.75...2.0.76) (2025-12-15)
 
 
