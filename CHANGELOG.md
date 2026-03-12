@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.83](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.82...2.0.83) (2026-03-12)
+
+
+### Bug Fixes
+
+* **deps:** update connect plugin to version 0.6.2 ([55f6c28](https://github.com/tf2pickup-org/tf2-gameserver/commit/55f6c28172bca868d96e46d0749c4a9744bf6cd9))
+
 ## [2.0.82](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.81...2.0.82) (2026-03-12)
 
 
