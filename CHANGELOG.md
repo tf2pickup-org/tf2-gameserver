@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.95](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.94...2.0.95) (2026-07-11)
+
+
+### Bug Fixes
+
+* **deps:** update tf2-competitive version to 3.10.2 ([4338242](https://github.com/tf2pickup-org/tf2-gameserver/commit/4338242919df0194ffa3620ebbf878af77010713))
+
 ## [2.0.94](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.93...2.0.94) (2026-07-10)
 
 
