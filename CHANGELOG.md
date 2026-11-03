@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.122](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.121...2.0.122) (2026-11-03)
+
+### Bug Fixes
+
+* **deps:** update tf2-competitive version to 4.1.5 ([044aa21](https://github.com/tf2pickup-org/tf2-gameserver/commit/044aa21fb1f5496f8760a224799a213fc4f43175))
+
 ## [2.0.121](https://github.com/tf2pickup-org/tf2-gameserver/compare/2.0.120...2.0.121) (2026-10-31)
 
 ### Bug Fixes
